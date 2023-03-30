@@ -6,7 +6,7 @@ Sonatype Nexus System Requirements
 
 Minimum 1 VCPU & 2 GB Memory
 Server firewall opened for port 22 & 8081
-OpenJDK 8
+OpenJDK 8 or open JDK 11
 All Nexus processes should run as a non-root nexus user.
 
 Step 1: Login to your Linux server and update the yum packages. Also install required utilities.
