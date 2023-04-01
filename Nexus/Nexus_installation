@@ -31,17 +31,38 @@ Step 5: As a good security practice, it is not advised to run nexus service with
 # sudo chown -R nexus:nexus /opt/nexus
 # sudo chown -R nexus:nexus /opt/sonatype-work
 
-# su - nexus
 
 Step 6: Open /opt/nexus/bin/nexus.rc file
 
 # sudo vi  /opt/nexus/bin/nexus.rc
 
      run_as_user="nexus"
+     
+     
+# sudo vi /etc/systemd/system/nexus.service
+
+Unit]
+Description=nexus service
+After=network.target
+
+[Service]
+Type=forking
+LimitNOFILE=65536
+User=nexus
+Group=nexus
+ExecStart=/opt/nexus/bin/nexus start
+ExecStop=/opt/nexus/bin/nexus stop
+User=nexus
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+
 
 # sudo chkconfig nexus on
 
 # sudo systemctl start nexus
+# sudo systemctl status nexus
 
 visit http://public IP:8081. You will be able to see the nexus homepage
 
