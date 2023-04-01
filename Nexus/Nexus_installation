@@ -21,6 +21,7 @@ Step 2: Install OpenJDK 1.8
 
 # cd /opt/
 # wget https://download.sonatype.com/nexus/3/nexus-3.50.0-01-unix.tar.gz
+# tar -xvf nexus-3.50.0-01-unix.tar.gz
 # sudo mv nexus-3* nexus
 
 
