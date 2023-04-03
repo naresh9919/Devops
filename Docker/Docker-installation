@@ -1,0 +1,6 @@
+# sudo yum install java-11-amazon-corretto-devel
+# java --version
+# yum install docker
+# docker --version
+# service docker start
+# service docker status
