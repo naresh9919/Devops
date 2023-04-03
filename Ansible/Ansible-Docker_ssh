@@ -1,0 +1,85 @@
+                                                                    ANSIBLE INSTALLATION
+
+
+# sudo yum install java-11-amazon-corretto-devel
+# java –version
+
+# vi /etc/ssh/sshd-config
+# authentication password yes (remove the # tag)
+# service sshd reload 
+
+# yum install python3-pip
+  pip3 install ansible
+
+# Ansible --version
+( if configure file is none at the time we have to create local host)
+( mkdir /etc/ansible --> cd /ect/ansible --> vi hosts --> localhost <type and save> --> cat hosts)
+
+# vi /etc/sudoers
+   ansadmin   ALL=(ALL)    NOPASSWD:ALL   (paste under root and save)
+
+# yum install docker
+# docker –version
+
+# service docker start
+# service docker status
+
+# useradd ansadmin
+# passwd ansadmin
+    new password : ansadmin
+    conform password : ansadmin
+# usermod -aG docker ansadmin
+
+# cd /opt
+# mkdir docker
+# chown -R ansadmin:ansadmin /opt/docker
+# chown -R ansadmin:ansadmin /etc/ansible/hosts
+# vi /etc/ansible/hosts
+( remove # this is the default ansible hosts file )
+# [all_hosts]
+# docker server IP address  (:wq!)
+
+                                                  # password less connection-beetween ansible and docker instance
+
+# sudo su - ansadmin
+
+# ssh-keygen
+   ls –al
+# cd .ssh
+# ssh-copy-id ansadmin@(docker IP)
+   yes and give password
+   number of keys added : 1
+# cd..
+# ssh ansadmin@docker IP  (docker will connected with the ansible)
+       exit (again it will came to ansible server)
+# ssh-copy-id localhost
+(yes and give password)
+     added one key (that is localhost)
+# ansible all -m ping   (it will ping successfully )
+
+
+                                                            DOCKER INSTALLATION
+
+# sudo yum install java-11-amazon-corretto-devel
+      java -version
+
+# vi /etc/ssh/sshd-config
+      authentication password yes (remove the # tag)
+# service sshd reload
+
+# vi /ete/sudoers
+   ansadmin ALL=(ALL) NOPASSWD:ALL
+
+# yum install docker   
+# docker --version
+# service docker start
+# service docker status
+        
+	                                                 Create a user called ansadmin
+
+# useradd ansadmin
+# passwd ansadmin
+# new password : ansadmin
+# conform password : ansadmin
+
+# usermod -aG docker ansadmin
