@@ -29,4 +29,5 @@ mvn --version
 
 find /usr/lib/jvm/java-11* | head -n 3
 
-(/usr/lib/jvm/java-11-amazon-corretto.x86_64)
+JAVA_HOME
+/usr/lib/jvm/java-11-amazon-corretto.x86_64
