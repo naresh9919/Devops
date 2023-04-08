@@ -23,7 +23,7 @@ export PATH=${M2_HOME}/bin:${PATH}
 chmod +x maven.sh
 
 source /etc/profile.d/maven.sh
-mvn –version
+mvn --version
 
 
 
