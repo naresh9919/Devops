@@ -19,6 +19,9 @@ cd bin
 sh startup.sh 
 shutdown.sh
 
+# cd conf
+# vim tomcat-users.xml
+
 1. Update users information in the tomcat-users.xml file
 
 <role rolename="manager-script"/>
@@ -28,7 +31,7 @@ shutdown.sh
   <role rolename="admin-gui"/>
 <user username="tomcat" password="tomcat" roles="manager-script,admin-gui,manager-gui,manager-jmx,manager-status"/>
 
-
+paste end of the script
 # chmod +x /opt/tomcat/bin/startup.sh
 
 
