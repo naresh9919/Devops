@@ -35,7 +35,7 @@ http:// server-ip address:9000
 
                                                   SONARQUBE INTEGRATION ON JENKINS
 
---> install sonar scanner pluggin
+--> install sonarqube scanner pluggin
 
 --> go to sonarqube --> create project and generate key --> save anywhere
 
