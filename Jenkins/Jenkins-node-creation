@@ -1,0 +1,33 @@
+•  Dashboard
+• Manage Jenkins  
+
+Manage Nodes and Clouds
+
+New node
+
+Node name  : Build-node-1
+Permanent Agent ( )
+
+Name : Build-node-1
+ 
+Description :  build node for java application
+Number of executors : 2
+Remote root directory :   /var/Jenkins
+Labels    : java_node
+
+Usage : Use this node as much as possible
+Launch method :  Launch agent by connecting it to the controller
+
+ Use WebSocket ( )
+
+Availability : Keep this agent online as much as possible
+Save   
+
+
+( )Restrict where this project can be run
+
+Label Expression : java_node
+ 
+Label java_node matches 1 node. Permissions or other restrictions provided by plugins may further reduce that list.
+
+You need to paste jar.jar file on agent (slave) server
