@@ -1,0 +1,66 @@
+                                                           INSTALL JENKINS ON MASTER SERVER
+
+sudo yum install java-11-amazon-corretto-devel
+java --version
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+
+sudo yum upgrade
+
+sudo yum install jenkins
+
+sudo systemctl daemon-reload
+
+sudo systemctl enable jenkins
+
+sudo systemctl start jenkins
+
+sudo systemctl status jenkins
+
+vi /etc/ssh/sshd_config
+Authentication password yes  (remove #)
+
+service sshd reload
+
+vi /etc/sudoers
+Jenkins ALL=(ALL) NOPASSWD:ALL  (under root)
+
+vi /etc/passwd
+jenkins:x:992:992:Jenkins Automation Server:/var/lib/jenkins:/bin/bash (false)
+
+cat /etc/passwd
+
+passwd Jenkins
+
+                                                                   ON SLAVE SERVER
+sudo yum install java-11-amazon-corretto-devel
+java --version
+
+useradd Jenkins
+
+passwd Jenkins
+
+vi /etc/ssh/sshd_config
+Authentication password yes  (remove #)
+
+service sshd reload
+
+vi /etc/sudoers
+Jenkins ALL=(ALL) NOPASSWD:ALL  (under root)
+
+                                                                 GO TO MASTER SERVER
+
+sudo su – Jenkins
+
+ssh-keygen
+
+ssh-copy-id jenkins@localhost
+
+ssh 'jenkins@localhost'
+hostname -i
+exit
+
+ssh-copy-id jenkins@slave IP
+hostname -i
