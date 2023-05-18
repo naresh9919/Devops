@@ -3,7 +3,17 @@ $ sudo apt update
 $ sudo apt install openjdk-11-jre
 $ java -version
 
+vi ~/.bash_profile
+source ~/.bash_profile
+echo $PATH
+
+JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+export JAVA_HOME
+export PATH
+
 /usr/lib/jvm/java-11-openjdk-amd64/bin/java
+update-alternatives --config java
 
 # install jenkins
 
